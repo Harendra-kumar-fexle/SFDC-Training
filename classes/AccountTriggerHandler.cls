@@ -78,7 +78,7 @@ public with sharing class AccountTriggerHandler {
 *    @revision Log   :       V1.1  - Created  -  21/07/2022  - Harendra Kumar
 *
 */
-    public static void addPrefixOnType(List<Account> accList){
+    public static void addPrefixOnType(List<Account> accList, List<Account> acList){
         Integer randomNumber = Integer.valueOf(Math.random() * 10000); // Generate a random number for AccountNumber.
         for(Account acc : accList){
             If(acc.Type == 'Saving Account'){

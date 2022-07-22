@@ -17,7 +17,7 @@ trigger TriggerAccount on Account (before insert, before update, after insert) {
        AccountTriggerHandler.insertAndUpdateRecord(Trigger.New);
     }
 
-    if(Trigger.isInsert && Trigger.isBefore){
-       AccountTriggerHandler.addPrefixOnType(Trigger.New);
+    if(Trigger.isInsert && Trigger.isBefore || Trigger.isUpdate && Trigger.isBefore){
+       AccountTriggerHandler.addPrefixOnType(Trigger.New, Trigger.Old);
     }
 }
